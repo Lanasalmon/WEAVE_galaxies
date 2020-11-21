@@ -33,7 +33,7 @@ def GLADEV2coordinates():
 
 def PS1coordinates(filename):
 
-    data = pd.read_csv(filename,usecols=['RA','Dec','rMeanKronMag'])
+    data = pd.read_csv(filename,usecols=['RA','Dec','rMeanKronMag','objName'])
 
 
     #data=pd.read_csv('GW190924h_1_Lana_S.csv',usecols=['RA','Dec','rMeanKronMag'])
