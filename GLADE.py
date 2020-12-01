@@ -14,7 +14,7 @@ def GLADEV2coordinates():
     fn = fsspec.open_local(f'simplecache::s3://gxgwtest/GLADE.h5')
     data = pd.read_hdf(fn, 'df')  
    
-    data.columns=['PGC','GWGC','HyperLEDA','2MASS','SDSS','flag1','RA','Dec','dist','dist_err','z','Bmag','a','b','c','d','e','f','g','h','i','j']
+    data.columns=['PGC','GWGC','HyperLEDA','2MASS','SDSS','flag1','RA','Dec','dist','dist_err','z','Bmag','e_Bmag','AbsBMag','Jmag','e_Jmag','Hmag','e_Hmag','Kmag','eKmag','flag2','flag3']
 
     msk3=data[['dist']]>0
     msk4=data[['dist']]!="NaN"
@@ -33,7 +33,7 @@ def GLADEV2coordinates():
 
 def PS1coordinates(filename):
 
-    data = pd.read_csv(filename,usecols=['RA','Dec','rMeanKronMag','objName'])
+    data = pd.read_csv(filename)
 
 
     #data=pd.read_csv('GW190924h_1_Lana_S.csv',usecols=['RA','Dec','rMeanKronMag'])
