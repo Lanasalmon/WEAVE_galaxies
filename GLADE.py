@@ -25,6 +25,7 @@ def GLADEV2coordinates():
     slct=msk.all(axis=1)
     data=data.loc[slct]
     print('lengthofdata',len(data))
+    data['source']='GLADE'
     
     coordinates=SkyCoord(data['RA'].values*u.deg, data['Dec'].values*u.deg)
     
@@ -52,6 +53,7 @@ def PS1coordinates(filename):
     msk=pd.concat((msk5,msk6),axis=1)
     slct=msk.all(axis=1)
     data=data.loc[slct]
+    data['source']='PS1'
 
     coordinates=SkyCoord(data['RA'].values*u.deg, data['Dec'].values*u.deg)
     return coordinates,data
