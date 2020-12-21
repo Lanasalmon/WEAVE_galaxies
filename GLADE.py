@@ -16,14 +16,14 @@ def GLADEV2coordinates():
    
     data.columns=['PGC','GWGC','HyperLEDA','2MASS','SDSS','flag1','RA','Dec','dist','dist_err','z','Bmag','e_Bmag','AbsBMag','Jmag','e_Jmag','Hmag','e_Hmag','Kmag','eKmag','flag2','flag3']
 
-    msk3=data[['dist']]>0
-    msk4=data[['dist']]!="NaN"
-    msk5=data[['Bmag']]!="NaN" 
-    msk6=data[['Bmag']]!="null"
-    msk7=data[['Bmag']]>0 
-    msk=pd.concat((msk3,msk4,msk5,msk6,msk7),axis=1)
-    slct=msk.all(axis=1)
-    data=data.loc[slct]
+    # msk3=data[['dist']]>0
+    # msk4=data[['dist']]!="NaN"
+    # msk5=data[['Bmag']]!="NaN" 
+    # msk6=data[['Bmag']]!="null"
+    # msk7=data[['Bmag']]>0 
+    # msk=pd.concat((msk3,msk4,msk5,msk6,msk7),axis=1)
+    # slct=msk.all(axis=1)
+    # data=data.loc[slct]
     print('lengthofdata',len(data))
     data['source']='GLADE'
     
